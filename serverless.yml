@@ -1,0 +1,14 @@
+service: lambda-react
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  memorySize: 512 # optional, in MB, default is 1024
+  timeout: 10 # optional, in seconds, default is 6
+  versionFunctions: false # optional, default is true
+
+functions:
+  hello:
+    handler: handler.handler # required, handler set in AWS Lambda
+    events:
+      - http: get {proxy+}
