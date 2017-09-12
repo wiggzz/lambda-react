@@ -11,4 +11,5 @@ functions:
   hello:
     handler: handler.handler # required, handler set in AWS Lambda
     events:
+      - http: get /
       - http: get {proxy+}
